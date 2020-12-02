@@ -1,7 +1,6 @@
 # Jellyfin
 
 ```
-docker pull jellyfin/jellyfin
 docker run \
 --detach \
 --name=jellyfin \
