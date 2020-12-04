@@ -2,19 +2,27 @@ version: "3"
 
 services:
   adminer:
+    container_name: adminer
     image: adminer:4.7
-    restart: always
     ports:
-      - 8080:8080
+      - published: 8080
+        target: 8080
+    restart: always
 
   mysql:
-    image: mysql:5.7
-    restart: always
+    container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - /usr/share/docker/mysql:/var/lib/mysql
 
   postgres:
-    image: postgres:12-alpine
-    restart: always
+    container_name: postgres
     environment:
       POSTGRES_PASSWORD: password
+    image: postgres:12-alpine
+    restart: always
+    volumes:
+      - /usr/share/docker/postgresql/data:/var/lib/postgresql/data
