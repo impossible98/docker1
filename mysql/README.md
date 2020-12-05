@@ -3,16 +3,15 @@
 ## Docker
 
 ```
-docker pull mysql:5.7
 docker run \
 --detach \
 --env MYSQL_ROOT_PASSWORD=password \
---log-opt max-size=10m \
 --name mysql \
 --restart=always \
 --volume /usr/share/docker/mysql:/var/lib/mysql \
 mysql:5.7
-docker network connect adminer mysql
+docker network create database
+docker network connect database mysql
 ```
 
 ```

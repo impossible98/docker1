@@ -1,6 +1,7 @@
 # AriaNg
 
 ```
+docker pull p3terx/ariang
 docker run -d \
 --log-opt max-size=1m \
 --name ariang \

@@ -2,7 +2,7 @@
 
 ```
 docker run \
--d \
+--detach \
 --env database__client=mysql \
 --env database__connection__host=mysql \
 --env database__connection__user=root \
