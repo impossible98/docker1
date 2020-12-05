@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  gitea:
+    container_name: gitea
+    image: gitea/gitea:1.13.0
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - DB_TYPE=mysql
+      - DB_HOST=mysql:3306
+      - DB_NAME=gitea
+      - DB_USER=gitea
+      - DB_PASSWD=gitea
+    external_links:
+     - adminer_default
+    restart: always
+    volumes:
+      - ./gitea/data:/data
+      - /etc/timezone:/etc/timezone
+      - /etc/localtime:/etc/localtime
+    ports:
+       - '3000:3000'
