@@ -3,7 +3,7 @@
 ```
 docker run \
 --detach \
---name=grafana \
+--name grafana \
 --publish  3000:3000 \
 grafana/grafana
 ```

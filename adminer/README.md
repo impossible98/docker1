@@ -5,7 +5,7 @@
 ```
 docker run \
 --detach \
---name=adminer \
+--name adminer \
 --publish 8080:8080 \
 adminer:4.7
 docker network create database

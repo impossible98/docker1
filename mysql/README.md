@@ -7,7 +7,7 @@ docker run \
 --detach \
 --env MYSQL_ROOT_PASSWORD=password \
 --name mysql \
---restart=always \
+--restart always \
 --volume /usr/share/docker/mysql:/var/lib/mysql \
 mysql:5.7
 docker network create database
