@@ -1,5 +1,19 @@
 # Adguard Home
 
+## Docker
+
+```
+docker run \
+--detach \
+--name adguardhome \
+--publish 53:53/tcp \
+--publish 53:53/udp \
+--publish 3000:3000/tcp \
+-v /mnt/user/Nas/docker/adguardhome/work:/opt/adguardhome/work \
+-v /mnt/user/Nas/docker/adguardhome/conf:/opt/adguardhome/conf \
+adguard/adguardhome
+```
+
 ## Docker Compose
 
 ```
