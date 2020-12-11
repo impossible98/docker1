@@ -1,0 +1,11 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant:stable
+    volumes:
+      - /usr/share/docker/home-assistant/config:/config
+    environment:
+      - TZ=UTC
+    restart: always
+    network_mode: host

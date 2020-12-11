@@ -7,8 +7,9 @@ docker run \
 --env MYSQL_USER=root \
 --env MYSQL_PASSWORD=password \
 --env MYSQL_HOST=mysql \
---link mysql:mysql \
 --name=nextcloud \
---publish 10080:80 \
+--publish 8280:80 \
 nextcloud:20
+docker network create database
+docker network connect database nextcloud
 ```

@@ -1,15 +1,3 @@
-# Adguard Home
-
-## Docker Compose
-
-```
-docker-compose --project-name adguardhome up --detach
-```
-
-or
-
-```
-cat > docker-compose.yml << EOF
 version: '3'
 services:
   adguardhome:
@@ -21,8 +9,5 @@ services:
       - /usr/share/docker/adguardhome/work:/opt/adguardhome/work
     ports:
       - '53:53'
-      - 53:53/udp
-      - 3000:3000
-EOF
-docker-compose --project-name adguardhome up --detach
-```
+      - '53:53/udp'
+      - '3000:3000'

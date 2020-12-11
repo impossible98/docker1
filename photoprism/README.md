@@ -9,8 +9,7 @@ docker run \
 --name=photoprism \
 --publish 2342:2342 \
 --env PHOTOPRISM_ADMIN_PASSWORD=password \
---env PHOTOPRISM_UPLOAD_NSFW=true \
---volume /share/Nas/docker/photoprism:/photoprism/storage \
---volume /share/Nas/downloads/Photos:/photoprism/originals \
+--volume /usr/share/docker/photoprism/storage:/photoprism/storage \
+--volume /share/Nas/Photos:/photoprism/originals \
 photoprism/photoprism
 ```

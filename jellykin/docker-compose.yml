@@ -1,0 +1,15 @@
+version: '3'
+services:
+  jellyfin:
+    container_name: jellyfin
+    image: jellyfin/jellyfin:10.6.4
+    volumes:
+      - /usr/share/docker/jellyfin/cache:/cache
+      - /usr/share/docker/jellyfin/config:/config
+      - /share/Nas:/media
+    ports:
+      - 8096:8086
+    devices:
+      - /dev/dri/card0:/dev/dri/card0
+      - /dev/dri/renderD128:/dev/dri/renderD128
+
